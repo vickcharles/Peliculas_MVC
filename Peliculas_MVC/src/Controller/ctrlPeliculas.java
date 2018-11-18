@@ -25,22 +25,18 @@ public class ctrlPeliculas implements ActionListener {
     private mdlPeliculas CrudP;
     private Peliculas ModeloP;
     private DefaultTableModel modelo = new DefaultTableModel();
-    
     // Vista
     private frm_peliculas vista;
-
-   
+  
     public ctrlPeliculas(mdlPeliculas CrudP, Peliculas ModeloP, frm_peliculas vista) {
         this.CrudP = CrudP;
         this.ModeloP = ModeloP;
         this.vista = vista;
           
-        
         this.vista.btnRegistrar.addActionListener(this);
         this.vista.jcbSeleccionPeliculas.addActionListener(this);
         this.vista.btnActualizar.addActionListener(this);
-        this.vista.btnEliminar.addActionListener(this);
-        
+        this.vista.btnEliminar.addActionListener(this);   
     }
     
     public void IniciarVistaTabla() {
@@ -69,7 +65,8 @@ public class ctrlPeliculas implements ActionListener {
         vista.jcbPais_MO.setSelectedIndex(0);
     }
     
-     private void cargarPeliculas() {
+    //Cargar Peliculas
+    private void cargarPeliculas() {
         try {
             ResultSet rs = CrudP.Mostrar();
             while (rs.next()) {
@@ -85,9 +82,12 @@ public class ctrlPeliculas implements ActionListener {
             JOptionPane.showMessageDialog(null, "Error al cargar los datos en la base de datos");
         }
     }
-
+     
+    
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        //Registrar
         if (e.getSource() == vista.btnRegistrar) {
             if (vista.txtActor_in.getText().isEmpty() || vista.txtNombre_in.getText().isEmpty() ||
                 vista.txtAño_in.getText().isEmpty() || vista.jcbGenero_in.getSelectedItem().equals("") || 
@@ -110,6 +110,7 @@ public class ctrlPeliculas implements ActionListener {
             }
            
         }
+        //Actualizar
         if(e.getSource() == vista.btnActualizar){
             if (vista.txtActor_mo.getText().isEmpty() || vista.txtNombre_mo.getText().isEmpty() ||
                 vista.txtAño_mo.getText().isEmpty() || vista.jcbGenero_mo.getSelectedItem().equals("") || 
@@ -136,6 +137,7 @@ public class ctrlPeliculas implements ActionListener {
         
             }
         
+        //Cargar combo box
         if (e.getSource() == vista.jcbSeleccionPeliculas) {
            Peliculas peliculas = (Peliculas) vista.jcbSeleccionPeliculas.getSelectedItem();
            if(peliculas == null) {
@@ -153,26 +155,21 @@ public class ctrlPeliculas implements ActionListener {
            vista.txtAño_mo.setText(String.valueOf(peliculas.getAno()));
            vista.txtActor_mo.setText(String.valueOf(peliculas.getActor()));
            for (int i = 0; i < vista.jcbPais_MO.getItemCount(); i++) {
-               if (peliculas.getPais().equals(vista.jcbPais_MO.getItemAt(i).toString())) {
+                if (peliculas.getPais().equals(vista.jcbPais_MO.getItemAt(i).toString())) {
                    vista.jcbPais_MO.setSelectedIndex(i);
                    break;
-               }
+                }
+            }  
         }
-            
-        }
-        if (e.getSource() == vista.btnEliminar) {
-            
+        //Eliminar
+        if (e.getSource() == vista.btnEliminar) {  
            Peliculas peliculas = (Peliculas) vista.jcbSeleccionPeliculas_eli.getSelectedItem();
            if(peliculas == null) {
               return;
            }
             if (CrudP.Eliminar(peliculas.getId())) {
-               JOptionPane.showMessageDialog(null, "Se elimino la pelicula");
-            
+               JOptionPane.showMessageDialog(null, "Se elimino la pelicula");   
+        }    
         }
-            
-        }
-    }
-    
-    
+    }   
 }
