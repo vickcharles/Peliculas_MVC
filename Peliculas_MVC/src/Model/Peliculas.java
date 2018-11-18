@@ -25,6 +25,9 @@ public class Peliculas {
         this.Pais = Pais;
         this.Actor = Actor;
     }
+
+    public Peliculas() {
+    }
     
     public int getId() {
         return Id;
@@ -73,5 +76,11 @@ public class Peliculas {
     public void setActor(String Actor) {
         this.Actor = Actor;
     }  
+    
+    @Override
+    public String toString() {
+        return Nombre;
+    }
+   
     
 }

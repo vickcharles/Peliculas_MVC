@@ -45,7 +45,7 @@ public class frm_peliculas extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jcbSeleccionPeliculas_eli = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtNombre_in = new javax.swing.JTextField();
@@ -73,7 +73,7 @@ public class frm_peliculas extends javax.swing.JFrame {
         jcbPais_MO = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jcbSeleccionPeliculas = new javax.swing.JComboBox();
-        jButton3 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,10 +137,10 @@ public class frm_peliculas extends javax.swing.JFrame {
 
         jLabel13.setText("Selecione la Pelicula:");
 
-        jButton2.setText("Eliminar Peliculas");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setText("Eliminar Peliculas");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
@@ -154,7 +154,7 @@ public class frm_peliculas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jcbSeleccionPeliculas_eli, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(270, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -165,7 +165,7 @@ public class frm_peliculas extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jcbSeleccionPeliculas_eli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(362, Short.MAX_VALUE))
         );
 
@@ -276,7 +276,7 @@ public class frm_peliculas extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Actualizar Peliculas");
+        btnActualizar.setText("Actualizar Peliculas");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -320,7 +320,7 @@ public class frm_peliculas extends javax.swing.JFrame {
                                     .addComponent(jcbGenero_mo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(321, 321, 321)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(262, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -355,7 +355,7 @@ public class frm_peliculas extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jcbPais_MO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
@@ -388,10 +388,10 @@ public class frm_peliculas extends javax.swing.JFrame {
      
     }//GEN-LAST:event_jcbSeleccionPeliculasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
 
  
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
  
   
     public static void main(String args[]) {
@@ -430,11 +430,11 @@ public class frm_peliculas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistrar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JComboBox<String> jComboBox7;
+    public javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -456,19 +456,19 @@ public class frm_peliculas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JComboBox<String> jcbGenero_in;
-    private javax.swing.JComboBox jcbGenero_mo;
-    private javax.swing.JComboBox<String> jcbPais_MO;
-    private javax.swing.JComboBox<String> jcbPais_in;
+    public javax.swing.JTable jTable1;
+    public javax.swing.JComboBox<String> jcbGenero_in;
+    public javax.swing.JComboBox jcbGenero_mo;
+    public javax.swing.JComboBox<String> jcbPais_MO;
+    public javax.swing.JComboBox<String> jcbPais_in;
     public javax.swing.JComboBox jcbSeleccionPeliculas;
-    private javax.swing.JComboBox jcbSeleccionPeliculas_eli;
-    private javax.swing.JTextField txtActor_in;
-    private javax.swing.JTextField txtActor_mo;
-    private javax.swing.JTextField txtAño_in;
-    private javax.swing.JTextField txtAño_mo;
-    private javax.swing.JTextField txtId_mo;
-    private javax.swing.JTextField txtNombre_in;
-    private javax.swing.JTextField txtNombre_mo;
+    public javax.swing.JComboBox jcbSeleccionPeliculas_eli;
+    public javax.swing.JTextField txtActor_in;
+    public javax.swing.JTextField txtActor_mo;
+    public javax.swing.JTextField txtAño_in;
+    public javax.swing.JTextField txtAño_mo;
+    public javax.swing.JTextField txtId_mo;
+    public javax.swing.JTextField txtNombre_in;
+    public javax.swing.JTextField txtNombre_mo;
     // End of variables declaration//GEN-END:variables
 }
