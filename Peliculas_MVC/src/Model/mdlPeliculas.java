@@ -37,15 +37,8 @@ public class mdlPeliculas extends Conexion {
    
         } catch (SQLException e) {
             System.out.println(e);
-            return false;
-            
-        } finally {
-            try {
-              con.close();
-            } catch (SQLException e) {
-               System.out.println(e);
-            }
-        }
+            return false; 
+        } 
     } 
     
     // Metodo para actualizar
@@ -72,13 +65,54 @@ public class mdlPeliculas extends Conexion {
     // Metodo para Mostrar
     public ResultSet Mostrar() {
         try {
-          String quer = "SELECT * FROM tbl_peliculas";
+          String query = "SELECT * FROM tbl_peliculas";
           st = con.createStatement();
-          rs = st.executeQuery(quer);
+          rs = st.executeQuery(query);
           return rs;
           
         } catch(SQLException e){
             System.err.println(e);
+            return null;
+        }
+    }
+    
+     public ResultSet BuscarGenero(String genero) {
+        try {
+          String query = "SELECT * FROM tbl_peliculas WHERE Gen_peli=?";
+          ps = con.prepareStatement(query);
+          ps.setString(1, genero);
+          rs = ps.executeQuery();
+          return rs;
+          
+        } catch(SQLException e){
+            System.err.println(e);
+            return null;
+        }
+    }
+     
+     public ResultSet BuscarPais(String pais) {
+        try {
+          String query = "SELECT * FROM tbl_peliculas WHERE Pais_peli=?";
+          ps = con.prepareStatement(query);
+          ps.setString(1, pais);
+          rs = ps.executeQuery();
+          return rs;
+          
+        } catch(SQLException e){
+            System.err.println(e);
+            return null;
+        }
+    }
+     
+      public ResultSet MostrarPaisGenero(String buscar) {
+        try {
+          String query = "SELECT * FROM tbl_peliculas WHERE Nom_peli LIKE '%"+buscar+"%' or Act_peli LIKE '%"+buscar+"%' ";
+          ps = con.prepareStatement(query);
+          rs = ps.executeQuery();
+          return rs;
+          
+        } catch(SQLException e){
+            System.err.println(e+"Error");
             return null;
         }
     }
@@ -97,14 +131,7 @@ public class mdlPeliculas extends Conexion {
         }
     
     }
-//    
-//    public static void main(String[] args) {
-//        mdlPeliculas ps = new mdlPeliculas();
-//        Peliculas p = new Peliculas(6, "Titanic", "Drama", 2102, "Usa", "Will Smitch");
-//        ps.Eliminar(p);
-//
-//    }
-   
+
 }
 
    

@@ -39,9 +39,12 @@ public class frm_peliculas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        jcbBuscarPelicuas = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        jcbBuscarPais = new javax.swing.JComboBox<>();
+        txtBuscarPaisGenero = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jcbSeleccionPeliculas_eli = new javax.swing.JComboBox();
@@ -92,11 +95,13 @@ public class frm_peliculas extends javax.swing.JFrame {
 
         jLabel14.setText("Buscar Por Genero:");
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terror", "Comedia", "Dramatica", "Aventruras" }));
+        jcbBuscarPelicuas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terror", "Comedia", "Dramatica", "Aventruras" }));
 
         jLabel15.setText("Buscar Por Pais:");
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Colombia ", "Mexico ", "Brazil", "Argentina", "Ecuador", "España" }));
+        jcbBuscarPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Colombia ", "Mexico ", "Brazil", "Argentina", "Ecuador", "España" }));
+
+        jLabel17.setText("Ingrese Pais o Genero:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,12 +114,17 @@ public class frm_peliculas extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox8, 0, 220, Short.MAX_VALUE))
-                .addContainerGap(560, Short.MAX_VALUE))
+                    .addComponent(jcbBuscarPelicuas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jcbBuscarPais, 0, 220, Short.MAX_VALUE))
+                .addGap(221, 221, 221)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17)
+                    .addComponent(txtBuscarPaisGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 907, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -122,15 +132,22 @@ public class frm_peliculas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jcbBuscarPelicuas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(jcbBuscarPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscarPaisGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Peliculas", jPanel1);
@@ -251,6 +268,8 @@ public class frm_peliculas extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Insertar Peliculas", jPanel2);
+
+        txtId_mo.setEnabled(false);
 
         jLabel6.setText("Id:");
 
@@ -433,8 +452,6 @@ public class frm_peliculas extends javax.swing.JFrame {
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnRegistrar;
-    public javax.swing.JComboBox<String> jComboBox7;
-    public javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -442,6 +459,8 @@ public class frm_peliculas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -457,6 +476,8 @@ public class frm_peliculas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTable1;
+    public javax.swing.JComboBox<String> jcbBuscarPais;
+    public javax.swing.JComboBox<String> jcbBuscarPelicuas;
     public javax.swing.JComboBox<String> jcbGenero_in;
     public javax.swing.JComboBox jcbGenero_mo;
     public javax.swing.JComboBox<String> jcbPais_MO;
@@ -467,6 +488,7 @@ public class frm_peliculas extends javax.swing.JFrame {
     public javax.swing.JTextField txtActor_mo;
     public javax.swing.JTextField txtAño_in;
     public javax.swing.JTextField txtAño_mo;
+    public javax.swing.JTextField txtBuscarPaisGenero;
     public javax.swing.JTextField txtId_mo;
     public javax.swing.JTextField txtNombre_in;
     public javax.swing.JTextField txtNombre_mo;
